@@ -1,0 +1,20 @@
+net : "net.prototxt"
+# The base learning rate, momentum and the weight decay of the network.
+test_state: { stage: 'test-on-train' }
+test_iter: 500
+test_state: { stage: 'test-on-test' }
+test_iter: 100
+test_interval: 500
+test_compute_loss: true
+base_lr: 0.001
+momentum: 0.9
+#weight_decay: 0.005
+# The learning rate policy
+lr_policy: "step"
+stepsize: 20000
+gamma: 0.9
+display: 500   #500
+max_iter: 500000
+snapshot: 10000
+snapshot_prefix: "models/"
+solver_mode: GPU
